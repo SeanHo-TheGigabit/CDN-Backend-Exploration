@@ -2,7 +2,7 @@ from flask_smorest import Blueprint, abort
 from flask.views import MethodView
 from werkzeug.utils import secure_filename
 
-from .schemas import RuleSchema
+from .schemas import RuleSchema, RuleOrderScheme
 from app.schemas import DateFilterQuerySchema, DeleteMessageSchema
 
 blp = Blueprint("Rules", __name__)
@@ -51,4 +51,13 @@ class RulesResource(MethodView):
     @blp.response(204, DeleteMessageSchema)
     def delete(self, app_id):
         """Delete a rule"""
+        pass
+
+
+@blp.route("/<app_id>/rule/reorder")
+class RulesReorderResource(MethodView):
+    @blp.arguments(RuleOrderScheme(many=True), location="json")
+    @blp.response(200, RuleOrderScheme(many=True))
+    def put(self, rules_order, app_id):
+        """Reorder rules"""
         pass
