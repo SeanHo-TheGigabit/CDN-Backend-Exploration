@@ -1,7 +1,6 @@
 class RegisterAppResources:
     @staticmethod
     def register_resources(app):
-        print("In the register_resources method")
         URL_PREFIX = "/api/app"
         # fmt:off
         from app.applications.urls import blp as app_url
