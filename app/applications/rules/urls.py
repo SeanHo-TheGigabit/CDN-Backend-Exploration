@@ -41,7 +41,6 @@ class RulesResource(MethodView):
         # file_1.save(os.path.join(base_dir, secure_filename(file_1.filename)))
         pass
 
-
     @blp.arguments(RuleSchema, location="json")
     @blp.response(200, RuleSchema)
     def put(self, updated_rule, app_id):
