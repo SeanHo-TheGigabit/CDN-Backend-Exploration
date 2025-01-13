@@ -11,9 +11,6 @@ class RegisterAppResources:
 
         from app.applications.rules.urls import blp as rule_url
         app.register_blueprint(rule_url, url_prefix=URL_PREFIX)
-
-        from app.applications.upstreams.link.urls import blp as upstream_link_url
-        app.register_blueprint(upstream_link_url, url_prefix=URL_PREFIX)
         # fmt:on
 
         return app
