@@ -57,6 +57,6 @@ class RulesResource(MethodView):
 class RulesReorderResource(MethodView):
     @blp.arguments(RuleOrderSchema(many=True), location="json")
     @blp.response(200, RuleOrderSchema(many=True))
-    def put(self, rules_order, app_id):
-        """Reorder rules"""
+    def post(self, rules_order, app_id):
+        """Reorder rules - For reorder button"""
         pass
