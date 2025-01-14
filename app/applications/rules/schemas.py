@@ -88,6 +88,6 @@ class RuleSchema(Schema):
     conditions = fields.List(fields.Nested(ConditionSchema), required=True)
 
 
-class RuleOrderScheme(Schema):
+class RuleOrderSchema(Schema):
     rule_id = fields.Int(required=True)
     order = fields.Int(required=True)
